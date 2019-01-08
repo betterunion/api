@@ -1,0 +1,17 @@
+{
+  "name": "betterunion-api",
+  "version": "1.0.0",
+  "description": "The web api for BetterUnion",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "firebase": "^5.7.2"
+  }
+}
