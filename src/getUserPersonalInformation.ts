@@ -3,6 +3,7 @@ import * as firebase from "firebase";
 
 export async function getUserPersonalInformation(uid: string): Promise<UserPersonalInformation> {
     if(firebase.apps.length !== 1) {
+        console.log(firebase.apps.length);
         throw new Error("initialize firebase first");
     }
 
@@ -20,6 +21,6 @@ export async function getUserPersonalInformation(uid: string): Promise<UserPerso
 
         return firebase.functions()
             .httpsCallable('getUserPersonalInformation')({uid})
-            .then(result => <UserPersonalInformation> result.data());
+            .then(result => result.data);
     }
 }
