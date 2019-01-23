@@ -2,6 +2,7 @@ import * as firebase from "firebase";
 import testUser from "../keys/testUser.json";
 import "mocha";
 import {testGetUserPersonalInformation} from "./getUserPersonalInformation.test";
+import {testEditUserPersonalInformation} from "./editUserPersonalInformation.test";
 
 
 describe("BetterUnion API", function() {
@@ -19,5 +20,11 @@ describe("BetterUnion API", function() {
         return firebase.auth().signInWithEmailAndPassword(testUser.email, testUser.password).catch(console.log);
     });
 
+    after(function() {
+        return firebase.auth().signOut();
+    });
+
     describe("getUserPersonalInformation", testGetUserPersonalInformation);
+
+    describe("editUserPersonalInformation", testEditUserPersonalInformation);
 });
