@@ -3,6 +3,8 @@ import testUser from "../keys/testUser.json";
 import "mocha";
 import {testGetUserPersonalInformation} from "./getUserPersonalInformation.test";
 import {testEditUserPersonalInformation} from "./editUserPersonalInformation.test";
+import {testGetUserDefaultPrivacy} from "./getUserDefaultPrivacy.test";
+import {testEditUserDefaultPrivacy} from "./editUserDefaultPrivacy.test";
 
 
 describe("BetterUnion API", function() {
@@ -27,4 +29,8 @@ describe("BetterUnion API", function() {
     describe("getUserPersonalInformation", testGetUserPersonalInformation);
 
     describe("editUserPersonalInformation", testEditUserPersonalInformation);
+
+    describe("getUserDefaultPrivacy", testGetUserDefaultPrivacy);
+
+    describe("editUserDefaultPrivacy", testEditUserDefaultPrivacy);
 });

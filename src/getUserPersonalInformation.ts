@@ -8,10 +8,12 @@ export async function getUserPersonalInformation(uid?: string): Promise<UserPers
 
     if(firebase.auth().currentUser && (uid === undefined || firebase.auth().currentUser!.uid === uid)) {
         //the current user is trying to get their own information
-
-        return firebase.firestore().collection("users").doc(uid)
+        
+        return firebase.firestore().collection("users")
+            .doc(uid)
             .collection("information")
-            .doc("personal").get()
+            .doc("personal")
+            .get()
             .then(result => <UserPersonalInformation> result.data());
     }
     else if(uid !== undefined) {
@@ -23,6 +25,6 @@ export async function getUserPersonalInformation(uid?: string): Promise<UserPers
             .then(result => result.data);
     }
     else {
-        throw new Error("Can only get own user if logged in")
+        throw new Error("Can only get own user if logged in");
     }
 }

@@ -21,8 +21,8 @@ export function testEditUserPersonalInformation() {
 
 
     it("should update the user personal information", function() {
-        getUserPersonalInformation(firebase.auth().currentUser.uid).then(data => {
-            expect(data.name).to.deep.equal({value: newName, privacy: 3});
+        return getUserPersonalInformation(firebase.auth().currentUser!.uid).then(data => {
+            expect(data.name.first).to.deep.equal({value: newName, privacy: 3});
         });
     });
 }
