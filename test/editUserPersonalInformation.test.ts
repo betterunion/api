@@ -11,6 +11,7 @@ export function testEditUserPersonalInformation() {
 
     before(function() {
 
+        // @ts-ignore
         let editMap = new Map<string, Private<any>>();
         editMap.set("name.first", {value: newName, privacy: 3});
 
